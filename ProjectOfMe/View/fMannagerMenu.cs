@@ -38,10 +38,20 @@ namespace ProjectOfMe.View
             {
                 Menu data = new Menu();
                 data.Name = txtName.Text;
-                coffe.Menus.InsertOnSubmit(data);
-                coffe.SubmitChanges();
-                Alert("Thêm thành công", fAlert.enmType.Success);
-                loadGridMenu();
+
+                var da = coffe.Menus.FirstOrDefault(x => x.Name.Equals(txtName.Text));
+                if (da==null)
+                {
+                    coffe.Menus.InsertOnSubmit(data);
+                    coffe.SubmitChanges();
+                    Alert("Thêm thành công", fAlert.enmType.Success);
+                    loadGridMenu();
+                }
+                else
+                {
+                    Alert("tên menu không được trùng",fAlert.enmType.Error);
+                }
+                
             }
             else
             {
