@@ -270,6 +270,7 @@
             this.cbxMenu.Size = new System.Drawing.Size(164, 21);
             this.cbxMenu.TabIndex = 3;
             this.cbxMenu.SelectionChangeCommitted += new System.EventHandler(this.cbxMenu_SelectionChangeCommitted);
+            this.cbxMenu.Click += new System.EventHandler(this.cbxMenu_Click);
             // 
             // label1
             // 
@@ -299,6 +300,7 @@
             this.gridBIllDetal.ReadOnly = true;
             this.gridBIllDetal.Size = new System.Drawing.Size(494, 337);
             this.gridBIllDetal.TabIndex = 1;
+            this.gridBIllDetal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridBIllDetal_CellContentClick);
             // 
             // Column1
             // 
@@ -340,6 +342,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Quản lý bàn";
+            this.Load += new System.EventHandler(this.fManagerTable_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

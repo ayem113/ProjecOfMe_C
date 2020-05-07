@@ -50,7 +50,7 @@ namespace ProjectOfMe.View
         }
         private void fDashboard_Load(object sender, EventArgs e)
         {
-            AnimateHOme.AnimateWindow(this.Handle, 2000, AnimateHOme.HOR_POSSITIVE);
+            AnimateHOme.AnimateWindow(this.Handle, 200, AnimateHOme.HOR_POSSITIVE);
             tmClock.Start();
         }
     }

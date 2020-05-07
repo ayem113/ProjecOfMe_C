@@ -16,6 +16,7 @@ namespace ProjectOfMe.View
         public fSignup()
         {
             InitializeComponent();
+            ControlExtension.Draggable(button1, true);
         }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)

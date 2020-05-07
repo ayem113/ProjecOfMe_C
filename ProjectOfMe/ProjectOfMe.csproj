@@ -359,6 +359,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="sql\CoffreeManager.sql" />
     <None Include="Resources\Order-icon.png" />
     <None Include="Resources\US-dollar-icon.png" />
     <None Include="Resources\warning-icon.png" />

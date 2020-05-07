@@ -51,6 +51,7 @@
             this.picCheckPass = new Guna.UI.WinForms.GunaPictureBox();
             this.picCheckPass2 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaDragControl2 = new Guna.UI.WinForms.GunaDragControl(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCheckPass)).BeginInit();
@@ -385,11 +386,21 @@
             // 
             this.gunaDragControl2.TargetControl = this.gunaPictureBox1;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(497, 44);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 128;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // fSignup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(585, 468);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.picCheckPass2);
             this.Controls.Add(this.picCheckPass);
             this.Controls.Add(this.lblErrorMesseger);
@@ -443,5 +454,6 @@
         private Guna.UI.WinForms.GunaPictureBox picCheckPass;
         private Guna.UI.WinForms.GunaPictureBox picCheckPass2;
         private Guna.UI.WinForms.GunaDragControl gunaDragControl2;
+        private System.Windows.Forms.Button button1;
     }
 }
