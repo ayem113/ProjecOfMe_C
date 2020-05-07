@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CoffreeManager1" Class="CoffeMannagerDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DELL\SQLEXPRESS;Initial Catalog=CoffreeManager1;Integrated Security=True" SettingsObjectName="ProjectOfMe.Properties.Settings" SettingsPropertyName="CoffreeManager1ConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOPDUY-LM0HF;Initial Catalog=CoffreeManager1;Integrated Security=True" SettingsObjectName="ProjectOfMe.Properties.Settings" SettingsPropertyName="CoffreeManager1ConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Account" Member="Accounts">
     <Type Name="Account">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -10,26 +10,19 @@
       <Column Name="Img" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Bill" Member="Bills">
-    <Type Name="Bill">
+  <Table Name="dbo.Tabless" Member="Tablesses">
+    <Type Name="Tabless">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="DateCheckin" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="DateCheckout" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Disscount" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
-      <Column Name="Stt" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
-      <Column Name="IDTable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Bill_BillDetal" Member="BillDetals" ThisKey="Id" OtherKey="IDBill" Type="BillDetal" />
-      <Association Name="Tabless_Bill" Member="Tabless" ThisKey="IDTable" OtherKey="Id" Type="Tabless" IsForeignKey="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Statuss" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Association Name="Tabless_Bill" Member="Bills" ThisKey="Id" OtherKey="IDTable" Type="Bill" />
     </Type>
   </Table>
-  <Table Name="dbo.BillDetal" Member="BillDetals">
-    <Type Name="BillDetal">
+  <Table Name="dbo.Menu" Member="Menus">
+    <Type Name="Menu">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CountFood" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="IDBill" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="IDFood" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Bill_BillDetal" Member="Bill" ThisKey="IDBill" OtherKey="Id" Type="Bill" IsForeignKey="true" />
-      <Association Name="Food_BillDetal" Member="Food" ThisKey="IDFood" OtherKey="Id" Type="Food" IsForeignKey="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="Menu_Food" Member="Foods" ThisKey="Id" OtherKey="IdMenu" Type="Food" />
     </Type>
   </Table>
   <Table Name="dbo.Food" Member="Foods">
@@ -43,19 +36,26 @@
       <Association Name="Menu_Food" Member="Menu" ThisKey="IdMenu" OtherKey="Id" Type="Menu" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Menu" Member="Menus">
-    <Type Name="Menu">
+  <Table Name="dbo.BillDetal" Member="BillDetals">
+    <Type Name="BillDetal">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Association Name="Menu_Food" Member="Foods" ThisKey="Id" OtherKey="IdMenu" Type="Food" />
+      <Column Name="CountFood" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDBill" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDFood" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Food_BillDetal" Member="Food" ThisKey="IDFood" OtherKey="Id" Type="Food" IsForeignKey="true" />
+      <Association Name="Bill_BillDetal" Member="Bill" ThisKey="IDBill" OtherKey="Id" Type="Bill" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Tabless" Member="Tablesses">
-    <Type Name="Tabless">
+  <Table Name="dbo.Bill" Member="Bills">
+    <Type Name="Bill">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Statuss" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
-      <Association Name="Tabless_Bill" Member="Bills" ThisKey="Id" OtherKey="IDTable" Type="Bill" />
+      <Column Name="DateCheckin" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DateCheckout" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Disscount" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Stt" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="IDTable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Bill_BillDetal" Member="BillDetals" ThisKey="Id" OtherKey="IDBill" Type="BillDetal" />
+      <Association Name="Tabless_Bill" Member="Tabless" ThisKey="IDTable" OtherKey="Id" Type="Tabless" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

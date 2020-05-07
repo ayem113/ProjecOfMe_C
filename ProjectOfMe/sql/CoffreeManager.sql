@@ -122,7 +122,7 @@ END
 
 
 INSERT INTO dbo.Bill( DateCheckin ,DateCheckout ,Disscount ,Stt ,IDTable)
-VALUES  (GETDATE() ,	 , 15 ,'0' ,1 ),(GETDATE() , NULL , 25 ,'0' ,2 ),(GETDATE() , GETDATE() , 15 ,'1' ,1 ),(GETDATE() , NULL , 15 ,'0' ,3 )
+VALUES  (GETDATE() ,null, 15 ,'0' ,1 ),(GETDATE() , NULL , 25 ,'0' ,2 ),(GETDATE() , GETDATE() , 15 ,'1' ,1 ),(GETDATE() , NULL , 15 ,'0' ,3 )
 
 
 INSERT INTO dbo.BillDetal(CountFood, IDBill, IDFood )
